@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 #include <cstdio>
-//#include "TUI.h"
+#include "TUI.h"
 
 class KeyboardInterface
 {
@@ -12,6 +12,7 @@ class KeyboardInterface
         ~KeyboardInterface();
     private:
         void startLoop();
+        int capture();
         
 };
 
