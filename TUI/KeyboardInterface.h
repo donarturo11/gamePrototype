@@ -11,8 +11,10 @@ class KeyboardInterface
         KeyboardInterface();
         ~KeyboardInterface();
     private:
+        void printKeycodes();
         void startLoop();
         int capture();
+        void testArrow(int keyCode);
         
 };
 
