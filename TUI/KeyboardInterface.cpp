@@ -25,12 +25,7 @@ void KeyboardInterface::startLoop()
     int keyCode;
     while (1){
         keyCode=capture();
-        if (  keyCode == K_UP || 
-              keyCode == K_DOWN || 
-              keyCode == K_RIGHT || 
-              keyCode == K_LEFT
-           ) testArrow(keyCode);
-           
+        if (isArrowKey(keyCode)) testArrow(keyCode);
         else printf("%i\n", keyCode);
         if (keyCode=='q') break;
     }
@@ -43,6 +38,16 @@ int KeyboardInterface::capture()
         keyCode+=getch();
     }
     return keyCode;
+}
+
+bool KeyboardInterface::isArrowKey(int keyCode)
+{
+    if (  keyCode == K_UP ||
+          keyCode == K_DOWN ||
+          keyCode == K_RIGHT ||
+          keyCode == K_LEFT
+       ) return true;
+    else return false;
 }
 
 void KeyboardInterface::testArrow(int keyCode)

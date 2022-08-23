@@ -14,8 +14,8 @@ class KeyboardInterface
         void printKeycodes();
         void startLoop();
         int capture();
+        bool isArrowKey(int keyCode);
         void testArrow(int keyCode);
-        
 };
 
 #endif
